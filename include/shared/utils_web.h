@@ -72,20 +72,34 @@ typedef std::array<_WSError, _WSErrorsCOUNT> _WSErrors;
 
 #define HTTP_TEAPOT 418 //see RFC2324
 static constexpr const _WSErrors _errors = { {
-    {.key = "undefined",                .http_code = HTTP_TEAPOT,                   .err_code = INT_MIN, .message = "I'm a teapot!" },
-    {.key = "internal-error",           .http_code = HTTP_INTERNAL_SERVER_ERROR,    .err_code = 42,      .message = "Internal Server Error. %s" },
-    {.key = "not-authorized",           .http_code = HTTP_UNAUTHORIZED,             .err_code = 43,      .message = "You are not authenticated or your rights are insufficient."},
-    {.key = "element-not-found",        .http_code = HTTP_NOT_FOUND,                .err_code = 44,      .message = "Element '%s' not found."},
-    {.key = "method-not-allowed",       .http_code = HTTP_METHOD_NOT_ALLOWED,       .err_code = 45,      .message = "Http method '%s' not allowed."},
-    {.key = "request-param-required",   .http_code = HTTP_BAD_REQUEST,              .err_code = 46,      .message = "Parameter '%s' is required." },
-    {.key = "request-param-bad",        .http_code = HTTP_BAD_REQUEST,              .err_code = 47,      .message = "Parameter '%s' has bad value. Received %s. Expected %s" },
-    {.key = "bad-request-document",     .http_code = HTTP_BAD_REQUEST,              .err_code = 48,      .message = "Request document has invalid syntax. %s" },
-    {.key = "data-conflict",            .http_code = HTTP_CONFLICT,                 .err_code = 50,      .message = "Element '%s' cannot be processed because of conflict. %s"},
-    {.key = "action-forbidden",         .http_code = HTTP_FORBIDDEN,                .err_code = 51,      .message = "%s is forbidden. %s"},
-    {.key = "parameter-conflict",       .http_code = HTTP_BAD_REQUEST,              .err_code = 52,      .message = "Request cannot be processed because of conflict in parameters. %s"},
-    {.key = "content-too-big",          .http_code = HTTP_REQUEST_ENTITY_TOO_LARGE, .err_code = 53,      .message = "Content size is too big, maximum size is %s" },
-    {.key = "not-found",                .http_code = HTTP_NOT_FOUND,                .err_code = 54,      .message = "%s does not exist." },
-    {.key = "precondition-failed",      .http_code = HTTP_PRECONDITION_FAILED,      .err_code = 55,      .message = "Precondition failed - %s" }
+    {"undefined",                HTTP_TEAPOT,                   INT_MIN, "I'm a teapot!" },
+    {"internal-error",           HTTP_INTERNAL_SERVER_ERROR,    42,      "Internal Server Error. %s" },
+    {"not-authorized",           HTTP_UNAUTHORIZED,             43,      "You are not authenticated or your rights are insufficient."},
+    {"element-not-found",        HTTP_NOT_FOUND,                44,      "Element '%s' not found."},
+    {"method-not-allowed",       HTTP_METHOD_NOT_ALLOWED,       45,      "Http method '%s' not allowed."},
+    {"request-param-required",   HTTP_BAD_REQUEST,              46,      "Parameter '%s' is required." },
+    {"request-param-bad",        HTTP_BAD_REQUEST,              47,      "Parameter '%s' has bad value. Received %s. Expected %s" },
+    {"bad-request-document",     HTTP_BAD_REQUEST,              48,      "Request document has invalid syntax. %s" },
+    {"data-conflict",            HTTP_CONFLICT,                 50,      "Element '%s' cannot be processed because of conflict. %s"},
+    {"action-forbidden",         HTTP_FORBIDDEN,                51,      "%s is forbidden. %s"},
+    {"parameter-conflict",       HTTP_BAD_REQUEST,              52,      "Request cannot be processed because of conflict in parameters. %s"},
+    {"content-too-big",          HTTP_REQUEST_ENTITY_TOO_LARGE, 53,      "Content size is too big, maximum size is %s" },
+    {"not-found",                HTTP_NOT_FOUND,                54,      "%s does not exist." },
+    {"precondition-failed",      HTTP_PRECONDITION_FAILED,      55,      "Precondition failed - %s" }
+//    {.key = "undefined",                .http_code = HTTP_TEAPOT,                   .err_code = INT_MIN, .message = "I'm a teapot!" },
+//    {.key = "internal-error",           .http_code = HTTP_INTERNAL_SERVER_ERROR,    .err_code = 42,      .message = "Internal Server Error. %s" },
+//    {.key = "not-authorized",           .http_code = HTTP_UNAUTHORIZED,             .err_code = 43,      .message = "You are not authenticated or your rights are insufficient."},
+//    {.key = "element-not-found",        .http_code = HTTP_NOT_FOUND,                .err_code = 44,      .message = "Element '%s' not found."},
+//    {.key = "method-not-allowed",       .http_code = HTTP_METHOD_NOT_ALLOWED,       .err_code = 45,      .message = "Http method '%s' not allowed."},
+//    {.key = "request-param-required",   .http_code = HTTP_BAD_REQUEST,              .err_code = 46,      .message = "Parameter '%s' is required." },
+//    {.key = "request-param-bad",        .http_code = HTTP_BAD_REQUEST,              .err_code = 47,      .message = "Parameter '%s' has bad value. Received %s. Expected %s" },
+//    {.key = "bad-request-document",     .http_code = HTTP_BAD_REQUEST,              .err_code = 48,      .message = "Request document has invalid syntax. %s" },
+//    {.key = "data-conflict",            .http_code = HTTP_CONFLICT,                 .err_code = 50,      .message = "Element '%s' cannot be processed because of conflict. %s"},
+//    {.key = "action-forbidden",         .http_code = HTTP_FORBIDDEN,                .err_code = 51,      .message = "%s is forbidden. %s"},
+//    {.key = "parameter-conflict",       .http_code = HTTP_BAD_REQUEST,              .err_code = 52,      .message = "Request cannot be processed because of conflict in parameters. %s"},
+//    {.key = "content-too-big",          .http_code = HTTP_REQUEST_ENTITY_TOO_LARGE, .err_code = 53,      .message = "Content size is too big, maximum size is %s" },
+//    {.key = "not-found",                .http_code = HTTP_NOT_FOUND,                .err_code = 54,      .message = "%s does not exist." },
+//    {.key = "precondition-failed",      .http_code = HTTP_PRECONDITION_FAILED,      .err_code = 55,      .message = "Precondition failed - %s" }
     } };
 #undef HTTP_TEAPOT
 

@@ -24,7 +24,7 @@
  * \author GeraldGuillaume <GeraldGuillaume@Eaton.com>
  * \brief map of (topic name, topic id) keys
  */
-#include "topic_cache.h"
+#include "shared/topic_cache.h"
 
 namespace persist {
 

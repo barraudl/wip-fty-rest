@@ -39,7 +39,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #endif
 
 #include "shared/log.h"
-#include "utils.h"
+#include "shared/utils.h"
 
 #define ASSERT_LEVEL \
     assert(level == LOG_DEBUG   || \
@@ -56,7 +56,7 @@ static int log_stderr_level = LOG_WARNING;
 #endif
 static FILE* log_file = NULL;
 
-extern int errno;
+//extern int errno;
 
 /*XXX: gcc-specific!, see http://stackoverflow.com/questions/7623735/error-initializer-element-is-not-constant */
 static void init_log_file(void) __attribute__((constructor(105)));
@@ -173,15 +173,15 @@ static int do_logv(
 
     switch (level) {
         case LOG_DEBUG:
-            prefix = "DEBUG"; break;
+            prefix =  (char*) "DEBUG"; break;
         case LOG_INFO:
-            prefix = "INFO"; break;
+            prefix = (char*) "INFO"; break;
         case LOG_WARNING:
-            prefix = "WARNING"; break;
+            prefix = (char*) "WARNING"; break;
         case LOG_ERR:
-            prefix = "ERROR"; break;
+            prefix = (char*) "ERROR"; break;
         case LOG_CRIT:
-            prefix = "CRITICAL"; break;
+            prefix = (char*) "CRITICAL"; break;
         default:
             fprintf(log_file, "[ERROR]: %s:%d (%s) invalid log level %d", __FILE__, __LINE__, __func__, level);
             return -1;
@@ -195,14 +195,14 @@ static int do_logv(
         pidstr = NULL;
     }
     if (r == -1) {
-        fprintf(log_file, "[ERROR]: %s:%d (%s) can't allocate enough memory for format string: %m", __FILE__, __LINE__, __func__);
+        fprintf(log_file, "[ERROR]: %s:%d (%s) can't allocate enough memory for format string: %s", __FILE__, __LINE__, __func__, strerror (errno));
         return r;
     }
 
     r = vasprintf(&buffer, fmt, args);
     free(fmt);   // we don't need it in any case
     if (r == -1) {
-        fprintf(log_file, "[ERROR]: %s:%d (%s) can't allocate enough memory for message string: %m", __FILE__, __LINE__, __func__);
+        fprintf(log_file, "[ERROR]: %s:%d (%s) can't allocate enough memory for message string: %s", __FILE__, __LINE__, __func__, strerror (errno));
         if (buffer)
             free(buffer);
         return r;

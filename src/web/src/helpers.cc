@@ -22,12 +22,12 @@
 #include <cxxtools/regex.h>
 #include <unistd.h> // make "readlink" available on ARM
 #include <tntdb.h>
-#include "utils_web.h"
-#include "helpers.h"
+#include "shared/utils_web.h"
+#include "web/src/helpers.h"
 #include "shared/str_defs.h" // EV_LICENSE_DIR, EV_DATA_DIR
 
 #include "shared/log.h"
-#include "dbpath.h"
+#include "shared/dbpath.h"
 
 /**
  * TODO: This list should not be precompiled once and forever in the

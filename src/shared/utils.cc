@@ -18,7 +18,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include <assert.h>
 
-#include "utils.h"
+#include "shared/utils.h"
 #include "shared/str_defs.h"
 #include "defs.h"
 #include "cleanup.h"

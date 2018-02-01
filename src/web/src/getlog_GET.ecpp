@@ -31,10 +31,10 @@
 #include <sys/utsname.h>
 #include <time.h>
 #include <tnt/mimedb.h>
-#include "helpers.h"
+#include "web/src/helpers.h"
 #include "shared/subprocess.h"
 #include "shared/log.h"
-#include "utils.h"
+#include "shared/utils.h"
 
 // For debugging server credentials in error-reports below
 #include "grp.h"

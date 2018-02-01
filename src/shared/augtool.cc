@@ -28,7 +28,7 @@
 #include <functional>
 #include <cxxtools/split.h>
 
-#include "augtool.h"
+#include "shared/augtool.h"
 
 using namespace shared;
 

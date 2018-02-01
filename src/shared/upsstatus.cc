@@ -24,10 +24,10 @@
  * \author Karol Hrdina <KarolHrdina@Eaton.com>
  * \brief Not yet documented file
  */
-#include "upsstatus.h"
+#include "shared/upsstatus.h"
 #include <string.h>
 #include <iostream>
-#include "utils.h"
+#include "shared/utils.h"
 #include "cleanup.h"
 
 namespace shared {

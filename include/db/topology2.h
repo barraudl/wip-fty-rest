@@ -212,6 +212,6 @@ topology2_from_json_recursive (
 bool
     is_power_device (tntdb::Connection &conn, std::string &asset_name);
 
-};  // namespace persist
+}  // namespace persist
 
 #endif //SRC_INCLUDE_TOPOLOGY2

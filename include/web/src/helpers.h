@@ -28,7 +28,7 @@
 #define SRC_WEB_INCLUDE_HELPERS_H_
 
 #include <string>
-#include "utils_web.h"
+#include "shared/utils_web.h"
 #include <tnt/httprequest.h>
 
 bool

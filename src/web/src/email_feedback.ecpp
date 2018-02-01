@@ -24,8 +24,8 @@
  * \brief Sends feedback email.
  */
  #><%pre>
-#include "helpers.h"
-#include "tntmlm.h"
+#include "web/src/helpers.h"
+#include "shared/tntmlm.h"
 #include "shared/subprocess.h"
 #include "defs.h"
 #include <stdlib.h>

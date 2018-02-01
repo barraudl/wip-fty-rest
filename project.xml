@@ -58,7 +58,7 @@
     <header name = "dbtypes" />
     <header name = "defs" />
     <header name = "filesystem" />
-    <header name = "preproc.h" />
+    <header name = "preproc" />
 
    <header name = "db/agentstate" private = "1" />
    <header name = "db/assetdef" private = "1" />

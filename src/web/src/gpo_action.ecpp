@@ -24,10 +24,10 @@
  */
  #><%pre>
 #include <string>
-#include "tntmlm.h"
-#include "helpers.h"
-#include "utils_web.h"
-#include "assets.h"
+#include "shared/tntmlm.h"
+#include "web/src/helpers.h"
+#include "shared/utils_web.h"
+#include "db/assets.h"
 
 // request GPO interaction
 static zmsg_t *

@@ -33,15 +33,15 @@
 #include <czmq.h>
 
 #include "defs.h"
-#include "dbpath.h"
+#include "shared/dbpath.h"
 #include "shared/asset_types.h"
-#include "assettopology.h"
-#include "utils_web.h"
+#include "persist/assettopology.h"
+#include "shared/utils_web.h"
 #include "shared/log.h"
 #include "cleanup.h"
-#include "helpers.h"
+#include "web/src/helpers.h"
 #include "assetr.h"
-#include "utils++.h"
+#include "shared/utils++.h"
 </%pre>
 <%request scope="global">
 UserInfo user;
@@ -141,7 +141,7 @@ bool database_ready;
     _scoped_zmsg_t *return_msg = process_assettopology (url.c_str(), &input_msg);
     if (return_msg == NULL) {
         log_error ("Function process_assettopology() returned a null pointer");
-        http_die("internal-error");
+        http_die("internal-error", "");
     }
 
     if (is_common_msg (return_msg)) {
@@ -151,7 +151,7 @@ bool database_ready;
                 zmsg_destroy (&return_msg);
             }
             log_error ("common_msg_decode() failed");
-            http_die("internal-error");
+            http_die("internal-error", "");
         }
 
         if (common_msg_id (common_msg) == COMMON_MSG_FAIL) {
@@ -178,7 +178,7 @@ bool database_ready;
                 zmsg_destroy (&return_msg);
             }
             log_error ("asset_msg_decode() failed");
-            http_die("internal-error");
+            http_die("internal-error", "");
         }
 
         if (asset_msg_id (asset_msg) == ASSET_MSG_RETURN_POWER) {
@@ -198,7 +198,7 @@ bool database_ready;
                 if (zmsg == NULL || !zmsg_is (zmsg)) {
                     zframe_destroy (&devices);
                     log_error ("zmsg_decode() failed");
-                    http_die("internal-error");
+                    http_die("internal-error", "");
                 }
                 zframe_destroy (&devices);
 
@@ -209,7 +209,7 @@ bool database_ready;
                     if (!is_asset_msg (pop)) {
                         zmsg_destroy (&zmsg);
                         log_error ("malformed internal structure of returned message");
-                        http_die("internal-error");
+                        http_die("internal-error", "");
                     }
                     _scoped_asset_msg_t *item = asset_msg_decode (&pop); // _scoped_zmsg_t is freed
                     if (item == NULL) {
@@ -217,7 +217,7 @@ bool database_ready;
                             zmsg_destroy (&pop);
                         }
                         log_error ("asset_smg_decode() failed for internal messages");
-                        http_die("internal-error");
+                        http_die("internal-error", "");
                     }
 
                     if (first == false) {

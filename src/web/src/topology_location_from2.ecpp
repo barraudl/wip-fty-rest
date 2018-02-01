@@ -32,11 +32,11 @@
 #include <exception>
 #include <czmq.h>
 
-#include "dbpath.h"
-#include "data.h"
+#include "shared/dbpath.h"
+#include "shared/data.h"
 #include "location_helpers.h"
 #include "shared/asset_types.h"
-#include "helpers.h"
+#include "web/src/helpers.h"
 #include "topology2.h"
 </%pre>
 <%request scope="global">

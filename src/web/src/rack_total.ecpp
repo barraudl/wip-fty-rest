@@ -35,16 +35,16 @@
 
 #include <sys/types.h>
 
-#include "assetcrud.h"
-#include "data.h"
-#include "dbpath.h"
+#include "persist/assetcrud.h"
+#include "shared/data.h"
+#include "shared/dbpath.h"
 #include "cleanup.h"
-#include "utils.h"
-#include "utils++.h"
-#include "utils_web.h"
+#include "shared/utils.h"
+#include "shared/utils++.h"
+#include "shared/utils_web.h"
 #include "shared/log.h"
-#include "helpers.h"
-#include "tntmlm.h"
+#include "web/src/helpers.h"
+#include "shared/tntmlm.h"
 
 static const std::map<std::string, const std::string> PARAM_TO_SRC = {
     {"total_power", "realpower.default"},

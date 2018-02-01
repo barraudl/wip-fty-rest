@@ -29,11 +29,11 @@
 
 #include <cxxtools/jsondeserializer.h>
 #include <cxxtools/serializationinfo.h>
-#include "configure_inform.h"
-#include "helpers.h"
-#include "inout.h"
+#include "shared/configure_inform.h"
+#include "web/src/helpers.h"
+#include "db/inout.h"
 #include "shared/log.h"
-#include "assets.h"
+#include "db/assets.h"
 </%pre>
 <%request scope="global">
 UserInfo user;
@@ -127,7 +127,7 @@ bool database_ready;
     }
     catch (const std::exception& e) {
         LOG_END_ABNORMAL(e);
-        http_die("internal-error");
+        http_die("internal-error", "");
     }
 }
 </%cpp>

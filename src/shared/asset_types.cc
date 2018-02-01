@@ -250,4 +250,4 @@ is_ups(int x) {
     return x == asset_subtype::UPS;
 }
 
-}; // namesace end
+} // namesace end

@@ -32,8 +32,8 @@
 #include <cxxtools/inifile.h>
 
 #include "db/inout.h"
-#include "log.h"
-#include "csv.h"
+#include "shared/log.h"
+#include "shared/csv.h"
 
 static void
 s_usage()

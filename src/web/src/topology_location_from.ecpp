@@ -35,15 +35,15 @@
 
 #include "shared/log.h"
 #include "defs.h"
-#include "dbpath.h"
-#include "data.h"
+#include "shared/dbpath.h"
+#include "shared/data.h"
 #include "msg/common_msg.h"
 #include "location_helpers.h"
 #include "shared/asset_types.h"
-#include "assettopology.h"
-#include "utils_web.h"
+#include "persist/assettopology.h"
+#include "shared/utils_web.h"
 #include "cleanup.h"
-#include "helpers.h"
+#include "web/src/helpers.h"
 </%pre>
 <%thread scope="global">
 asset_manager asset_mgr;
@@ -179,7 +179,7 @@ bool database_ready;
     if (return_msg == NULL) {
         log_error ("Function process_assettopology() returned a null pointer");
         LOG_END;
-        http_die("internal-error");
+        http_die("internal-error", "");
     }
 
     if (is_common_msg (return_msg)) {
@@ -190,7 +190,7 @@ bool database_ready;
             }
             log_error ("common_msg_decode() failed");
             LOG_END;
-            http_die("internal-error");
+            http_die("internal-error", "");
         }
 
         if (common_msg_id (common_msg) == COMMON_MSG_FAIL) {
@@ -218,7 +218,7 @@ bool database_ready;
             }
             log_error ("asset_msg_decode() failed");
             LOG_END;
-            http_die("internal-error");
+            http_die("internal-error", "");
         }
 
         if (asset_msg_id (asset_msg) == ASSET_MSG_RETURN_LOCATION_FROM) {
@@ -231,7 +231,7 @@ bool database_ready;
             } else {
                 log_error ("unexpected error, during the reply parsing");
                 LOG_END;
-                http_die("internal-error");
+                http_die("internal-error", "");
             }
         }
         else {

@@ -25,11 +25,11 @@
  * \brief  Check if token is valid or not
  */
  #><%pre>
-#include "tokens.h"
+#include "web/src/tokens.h"
 #include <tnt/httpmessage.h>
 #include <tnt/httpheader.h>
-#include "utils_web.h"
-#include "helpers.h"
+#include "shared/utils_web.h"
+#include "web/src/helpers.h"
 #include "shared/log.h"
 
 #ifdef DEBUG
@@ -91,7 +91,7 @@ if(!checked_access_token.empty()) {
         user.login (user_name);
         free (user_name); user_name = NULL;
     } else {
-        http_die("not-authorized");
+        http_die("not-authorized", "");
     }
 }
 

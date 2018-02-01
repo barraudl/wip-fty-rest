@@ -23,8 +23,8 @@
  * \brief Sends test email.
  */
  #><%pre>
-#include "helpers.h"
-#include "tntmlm.h"
+#include "web/src/helpers.h"
+#include "shared/tntmlm.h"
 #include "defs.h"
 #include <stdlib.h>
 #include <sys/types.h>

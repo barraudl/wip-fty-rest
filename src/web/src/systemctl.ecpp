@@ -35,7 +35,7 @@
 #include <algorithm>
 
 #include "shared/subprocess.h"
-#include "helpers.h"
+#include "web/src/helpers.h"
 
 using namespace shared;
 

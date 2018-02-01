@@ -27,8 +27,8 @@
 #include <fstream>
 #include <cxxtools/regex.h>
 #include "shared/log.h"
-#include "helpers.h"
-#include "iface.h"
+#include "web/src/helpers.h"
+#include "web/src/iface.h"
 </%pre>
 <%request scope="global">
 UserInfo user;

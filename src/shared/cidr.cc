@@ -25,7 +25,7 @@
  * \author Karol Hrdina <KarolHrdina@Eaton.com>
  * \brief Not yet documented file
  */
-#include "cidr.h"
+#include "shared/cidr.h"
 #include <cstdio>
 #include <stdlib.h>
 #include <string.h>

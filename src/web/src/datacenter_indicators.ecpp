@@ -35,12 +35,12 @@
 
 #include <math.h>
 #include "shared/str_defs.h"
-#include "data.h"
-#include "utils_web.h"
+#include "shared/data.h"
+#include "shared/utils_web.h"
 #include "shared/log.h"
-#include "helpers.h"
+#include "web/src/helpers.h"
 
-#include "utils++.h"
+#include "shared/utils++.h"
 
 #define RT_PROVIDER_PEER "fty-metric-cache"
 #define RT_SUBJECT "latest-rt-data"

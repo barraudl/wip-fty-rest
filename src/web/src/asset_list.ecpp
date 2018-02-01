@@ -25,11 +25,11 @@
  */
  #><%pre>
 #include <cxxtools/split.h>
-#include "data.h"
+#include "shared/data.h"
 #include "shared/log.h"
-#include "assetcrud.h"
-#include "helpers.h"
-#include "assets.h"
+#include "persist/assetcrud.h"
+#include "web/src/helpers.h"
+#include "db/assets.h"
 </%pre>
 <%thread scope="global">
 asset_manager asset_mgr;

@@ -28,11 +28,11 @@
 #include <unistd.h>
 
 #include <cxxtools/jsondeserializer.h>
-#include "configure_inform.h"
-#include "inout.h"
-#include "helpers.h"
+#include "shared/configure_inform.h"
+#include "db/inout.h"
+#include "web/src/helpers.h"
 #include "shared/log.h"
-#include "assets.h"
+#include "db/assets.h"
 </%pre>
 <%request scope="global">
 UserInfo user;

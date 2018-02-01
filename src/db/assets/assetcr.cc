@@ -30,7 +30,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include "defs.h"
 #include "shared/asset_types.h"
 #include "assetr.h"
-#include "utils_web.h"
+#include "shared/utils_web.h"
 
 namespace persist {
 
@@ -332,7 +332,7 @@ int
     catch (const std::exception& e) {
         LOG_END_ABNORMAL(e);
         int idx;
-        bios_error_idx(idx, err, "internal-error");
+        bios_error_idx(idx, err, "internal-error", "");
         return -idx;
     }
 
@@ -964,7 +964,7 @@ db_reply_t
         ret.errtype    = DB_ERR;
         ret.errsubtype = DB_ERROR_BADINPUT;
         log_error ("end: %s, %s", "ignore insert", "0 value of element_id is not allowed");
-        bios_error_idx(ret.rowid, ret.msg, "internal-error");
+        bios_error_idx(ret.rowid, ret.msg, "internal-error", "");
         return ret;
     }
     if ( monitor_id == 0 )
@@ -974,7 +974,7 @@ db_reply_t
         ret.errsubtype = DB_ERROR_BADINPUT;
         ret.msg        = "0 value of monitor_id is not allowed";
         log_error ("end: %s, %s", "ignore insert", "0 value of monitor_id is not allowed");
-        bios_error_idx(ret.rowid, ret.msg, "internal-error");
+        bios_error_idx(ret.rowid, ret.msg, "internal-error", "");
         return ret;
     }
     log_debug ("input parameters are correct");
@@ -1003,7 +1003,7 @@ db_reply_t
         ret.status     = 0;
         ret.errtype    = DB_ERR;
         ret.errsubtype = DB_ERROR_INTERNAL;
-        bios_error_idx(ret.rowid, ret.msg, "internal-error");
+        bios_error_idx(ret.rowid, ret.msg, "internal-error", "");
         return ret;
     }
 }
@@ -1043,7 +1043,7 @@ db_reply_t
         ret.status     = 0;
         ret.errtype    = DB_ERR;
         ret.errsubtype = DB_ERROR_INTERNAL;
-        bios_error_idx(ret.rowid, ret.msg, "internal-error");
+        bios_error_idx(ret.rowid, ret.msg, "internal-error", "");
         return ret;
     }
 }

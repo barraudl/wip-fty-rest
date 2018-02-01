@@ -30,15 +30,15 @@
 
 #include <sys/types.h>
 
-#include "upsstatus.h"
-#include "data.h"
+#include "shared/upsstatus.h"
+#include "shared/data.h"
 #include "shared/log.h"
-#include "dbpath.h" // temporary
-#include "utils_web.h"
+#include "shared/dbpath.h" // temporary
+#include "shared/utils_web.h"
 #include "shared/asset_types.h"
-#include "helpers.h"
+#include "web/src/helpers.h"
 #include "shared/str_defs.h"
-#include "tntmlm.h"
+#include "shared/tntmlm.h"
 #include "defs.h"
 
 static std::string
@@ -306,7 +306,7 @@ std::vector<uint32_t> asset_ids;
 
         if ( rv != 0 )
         {
-            http_die("internal-error");
+            http_die("internal-error", "");
         }
 
         std::pair<std::string,std::string> asset_names = persist::id_to_name_ext_name (asset_id);

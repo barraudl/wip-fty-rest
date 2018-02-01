@@ -31,8 +31,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "utils.h"
-#include "helpers.h"
+#include "shared/utils.h"
+#include "web/src/helpers.h"
 #include "shared/log.h"
 </%pre>
 <%cpp>
@@ -58,16 +58,22 @@
     }
 	log_debug("accepted_license_file='%s'", accepted_license_file);
 
-    char *accepted_license_version = NULL;
-    FILE* src = fopen(accepted_license_file, "r");
-    if ( src != NULL ) {
-        fscanf(src,"%ms\n", &accepted_license_version);
-        fclose(src);
+    std::string accepted_license_version;
+    std::ifstream file(accepted_license_file, std::ios::in);
+    if(file) {
+        file >> accepted_license_version;
+        file.close();
     }
-    if ( accepted_license_version == NULL )
+//    char accepted_license_version = NULL;
+//    FILE* src = fopen(accepted_license_file, "r");
+//    if ( src != NULL ) {
+//        fscanf(src,"%ms\n", &accepted_license_version);
+//        fclose(src);
+//    }
+    if ( !accepted_license_version.empty() /*== NULL*/ )
         http_die("action-forbidden", "REST API call", "Please accept license first.");
-    if ( !streq(accepted_license_version, current_license_version) ) {
-        std::string msg = std::string{"License version changed (new is "} + current_license_version + ", accepted is " + accepted_license_version + "). Please accept new license first";
+    if ( !streq(accepted_license_version.c_str(), current_license_version) ) {
+        std::string msg = std::string{"License version changed (new is "} + current_license_version + ", accepted is " + accepted_license_version.c_str() + "). Please accept new license first";
         http_die("action-forbidden", "REST API call", msg.c_str());
     } else {
         return DECLINED;

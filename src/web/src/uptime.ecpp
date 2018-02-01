@@ -28,13 +28,13 @@
 #include <unistd.h>
 #include <cxxtools/split.h>
 #include <tntdb/error.h>
-#include "data.h"
+#include "shared/data.h"
 #include "shared/str_defs.h"
-#include "dbpath.h"
-#include "utils_web.h"
+#include "shared/dbpath.h"
+#include "shared/utils_web.h"
 #include "shared/log.h"
-#include "helpers.h"
-#include "assets.h"
+#include "web/src/helpers.h"
+#include "db/assets.h"
 </%pre>
 
 <%thread scope="global">
@@ -147,7 +147,7 @@ bool database_ready;
     catch (const std::exception& e) {
         mlm_client_destroy (&client);
         log_error ("%s", e.what ());
-        http_die ("internal-error");
+        http_die ("internal-error", "");
     }
 </%cpp>
 <$$ json.str() $>

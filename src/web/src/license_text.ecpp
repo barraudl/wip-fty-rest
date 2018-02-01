@@ -26,7 +26,7 @@
 #include <fstream>
 #include <string>
 #include <map>
-#include "helpers.h"
+#include "web/src/helpers.h"
 #include "shared/log.h"
 
 </%pre>

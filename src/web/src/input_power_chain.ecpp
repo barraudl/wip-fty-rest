@@ -28,11 +28,11 @@
 #include <utility>
 #include <cxxtools/jsonserializer.h>
 #include <cxxtools/serializationinfo.h>
-#include "utils_web.h"
-#include "assets.h"
-#include "helpers.h"
-#include "dbpath.h"
-#include "assettopology.h"
+#include "shared/utils_web.h"
+#include "db/assets.h"
+#include "web/src/helpers.h"
+#include "shared/dbpath.h"
+#include "persist/assettopology.h"
 #include <cxxtools/utf8codec.h>
 
 // struc for "devices" array

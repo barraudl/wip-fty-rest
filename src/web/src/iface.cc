@@ -43,7 +43,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <fstream>
 #include <sstream>
 
-#include "iface.h"
+#include "web/src/iface.h"
 
 std::set<std::string> get_ifaces() {
    std::set<std::string> ret;

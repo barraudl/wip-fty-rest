@@ -32,7 +32,7 @@
 #include <errno.h>
 #include <iconv.h>
 #include <ctype.h>
-#include "ic.h"
+#include "shared/ic.h"
 
 static
 int s_convert(iconv_t id, char *inbuf, size_t *bytes, char *outbuf, size_t *capacity)

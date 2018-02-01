@@ -31,9 +31,9 @@
 #include <unistd.h>
 
 #include "shared/log.h"
-#include "helpers.h"
+#include "web/src/helpers.h"
 #include "shared/str_defs.h"
-#include "assets.h"
+#include "db/assets.h"
 
 static
 int state_valid (const char *state) {

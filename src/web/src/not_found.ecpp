@@ -24,7 +24,7 @@
  * \brief Handling of incorrect URLs
  */
  #><%pre>
-    #include "helpers.h"
+    #include "web/src/helpers.h"
     #include <stdlib.h>
 </%pre>
 <%cpp>

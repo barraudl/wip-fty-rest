@@ -35,14 +35,14 @@
 
 #include <fty_proto.h>
 #include "shared/log.h"
-#include "utils.h"
-#include "utils_web.h"
-#include "utils++.h"
+#include "shared/utils.h"
+#include "shared/utils_web.h"
+#include "shared/utils++.h"
 #include "shared/str_defs.h"
-#include "dbpath.h"
+#include "shared/dbpath.h"
 #include "db/assets.h"
 #include "cleanup.h"
-#include "helpers.h"
+#include "web/src/helpers.h"
 
 #define RFC_ALERTS_LIST "rfc-alerts-list"
 

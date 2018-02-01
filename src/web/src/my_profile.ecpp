@@ -23,14 +23,14 @@
  * \brief  Manipulates with profile of the current user
  */
 #><%pre>
-    #include "utils_web.h"
+    #include "shared/utils_web.h"
     #include <stdlib.h>
-    #include "helpers.h"
+    #include "web/src/helpers.h"
     #include <sstream>
     #include <cxxtools/jsondeserializer.h>
     #include <cxxtools/jsonserializer.h>
     #include "shared/log.h"
-    #include "agentstate.h"
+    #include "db/agentstate/agentstate.h"
     #define DEFAULT_PREFERENCES "\"preferences\":{\"email\" : \" \", \"telephone\" : \" \", \"organization\" : \" \", \"date\":\"DDMMYYYY\", \"temperature\":\"C\", \"language\":\"en-us\", \"time\":\"24h\"}"
 </%pre>
 <%request scope="global">

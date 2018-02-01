@@ -43,8 +43,8 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include "db/assets.h"
 #include "db/inout.h"
 #include "shared/utils.h"
-#include "utils++.h"
-#include "utils_web.h"
+#include "shared/utils++.h"
+#include "shared/utils_web.h"
 #include "shared/tntmlm.h"
 
 using namespace shared;

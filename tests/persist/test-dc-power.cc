@@ -32,7 +32,7 @@
 #include <map>
 #include "log.h"
 
-#include "assettopology.h"
+#include "persist/assettopology.h"
 #include "dbhelpers.h"
 #include "monitor.h"
 #include "dbtypes.h"

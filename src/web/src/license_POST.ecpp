@@ -33,13 +33,13 @@
 #include <stdlib.h>
 #include <tntdb.h>
 
-#include "utils.h"
+#include "shared/utils.h"
 #include "cleanup.h"
-#include "helpers.h"
+#include "web/src/helpers.h"
 #include "shared/log.h"
-#include "dbpath.h"
+#include "shared/dbpath.h"
 #include "shared/subprocess.h"
-#include "filesystem.h"
+#include "shared/filesystem.h"
 
 </%pre>
 <%request scope="global">

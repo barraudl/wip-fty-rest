@@ -138,7 +138,7 @@ typedef struct _web/src/tokens_t web/src/tokens_t;
 #include "cleanup.h"
 #include "dbtypes.h"
 #include "defs.h"
-#include "filesystem.h"
+#include "shared/filesystem.h"
 #include "preproc.h.h"
 #ifdef FTY_REST_BUILD_DRAFT_API
 #include "db/topology2.h"

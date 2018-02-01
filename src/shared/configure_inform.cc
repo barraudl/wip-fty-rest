@@ -16,16 +16,16 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#include "configure_inform.h"
+#include "shared/configure_inform.h"
 
 #include <malamute.h>
 #include <stdexcept>
 
 #include <fty_proto.h>
-#include "str_defs.h"
-#include "assets.h"
-#include "dbpath.h"
-#include "fty_asset_uptime_configurator.h"
+#include "shared/str_defs.h"
+#include "db/assets.h"
+#include "shared/dbpath.h"
+#include "shared/fty_asset_uptime_configurator.h"
 
 static zhash_t*
 s_map2zhash (const std::map<std::string, std::string>& m)

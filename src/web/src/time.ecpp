@@ -28,9 +28,9 @@
 #include <sstream>
 #include <cxxtools/regex.h>
 #include <cxxtools/jsondeserializer.h>
-#include "augtool.h"
-#include "utils.h"
-#include "helpers.h"
+#include "shared/augtool.h"
+#include "shared/utils.h"
+#include "web/src/helpers.h"
 </%pre>
 <%request scope="global">
 UserInfo user;

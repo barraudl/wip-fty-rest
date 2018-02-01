@@ -31,9 +31,9 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include "shared/log.h"
-#include "utils_web.h"
+#include "shared/utils_web.h"
 #include "shared/str_defs.h"
-#include "helpers.h"
+#include "web/src/helpers.h"
 </%pre>
 <%request scope="global">
 UserInfo user;

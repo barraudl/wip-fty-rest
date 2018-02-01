@@ -30,15 +30,15 @@
  */
 #include <algorithm>
 
-#include "data.h"
-#include "utils_web.h"
+#include "shared/data.h"
+#include "shared/utils_web.h"
 
 #include "shared/log.h"
 #include "shared/asset_types.h"
-#include "dbpath.h"
+#include "shared/dbpath.h"
 #include "defs.h"
 
-#include "asset_general.h"
+#include "db/asset_general.h"
 
 static std::vector<std::tuple <a_elmnt_id_t, std::string, std::string, std::string>>
 s_get_parents (tntdb::Connection &conn, a_elmnt_id_t id)
@@ -227,7 +227,7 @@ db_reply <std::map <uint32_t, std::string> >
         tntdb::Connection conn = tntdb::connectCached(url);
         ret = persist::select_short_elements(conn, type_id, subtype_id);
         if ( ret.status == 0 )
-            bios_error_idx(ret.rowid, ret.msg, "internal-error");
+            bios_error_idx(ret.rowid, ret.msg, "internal-error", "");
         LOG_END;
         return ret;
     }
@@ -237,7 +237,7 @@ db_reply <std::map <uint32_t, std::string> >
         ret.errtype       = DB_ERR;
         ret.errsubtype    = DB_ERROR_INTERNAL;
         ret.msg           = e.what();
-        bios_error_idx(ret.rowid, ret.msg, "internal-error");
+        bios_error_idx(ret.rowid, ret.msg, "internal-error", "");
         return ret;
     }
 }

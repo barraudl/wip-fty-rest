@@ -33,14 +33,14 @@
 #include <fty_proto.h>
 #include <malamute.h>
 
-#include "data.h"
+#include "shared/data.h"
 #include "shared/asset_types.h"
-#include "assets.h"
+#include "db/assets.h"
 #include "defs.h"
-#include "utils_web.h"
-#include "utils++.h"
-#include "asset_computed_impl.h"
-#include "helpers.h"
+#include "shared/utils_web.h"
+#include "shared/utils++.h"
+#include "web/src/asset_computed_impl.h"
+#include "web/src/helpers.h"
 
 #include "shared/log.h"
 

@@ -34,10 +34,10 @@
 #include <string.h>
 
 #include "shared/subprocess.h"
-#include "augtool.h"
-#include "cidr.h"
-#include "utils_web.h"
-#include "helpers.h"
+#include "shared/augtool.h"
+#include "shared/cidr.h"
+#include "shared/utils_web.h"
+#include "web/src/helpers.h"
 
 using namespace shared;
 

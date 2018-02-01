@@ -25,7 +25,7 @@
 @discuss
 @end
 */
-#include "dbpath.h"
+#include "shared/dbpath.h"
 #include "db/dbhelpers.h"
 #include "defs.h"
 #include <tntdb/connect.h>

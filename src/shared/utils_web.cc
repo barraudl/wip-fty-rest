@@ -29,7 +29,7 @@
 #include "shared/subprocess.h"
 #include <stdlib.h> // for random()
 
-#include "utils_web.h"
+#include "shared/utils_web.h"
 #include "shared/log.h"
 
 namespace utils {
@@ -437,7 +437,7 @@ s_getenv (const char* name, const char* dfl)
     return ret;
 }
 
-static std::string
+/*static std::string
 s_read_all (const char* filename) {
     int fd = open (filename, O_RDONLY);
     if (fd <= -1)
@@ -445,7 +445,7 @@ s_read_all (const char* filename) {
     std::string ret = shared::read_all (fd);
     close (fd);
     return ret;
-}
+}*/
 
 void
 x_headers (zhash_t *headers)

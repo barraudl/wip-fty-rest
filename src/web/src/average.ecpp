@@ -37,17 +37,17 @@
 #include <cxxtools/csvserializer.h>
 #include <sys/types.h>
 
-#include "utils.h"
-#include "utils++.h"
+#include "shared/utils.h"
+#include "shared/utils++.h"
 #include "shared/log.h"
 #include "shared/str_defs.h"
 #include "cleanup.h"
-#include "utils_web.h"
-#include "helpers.h"
+#include "shared/utils_web.h"
+#include "web/src/helpers.h"
 #include <tntdb.h>
-#include "dbpath.h"
-#include "assets.h"
-#include "tntmlm.h"
+#include "shared/dbpath.h"
+#include "db/assets.h"
+#include "shared/tntmlm.h"
 #include "defs.h"
 
 // Check if value of parameter 'relative' is supported:
@@ -206,7 +206,7 @@ bool database_ready;
 
         auto basic_ret = persist::select_asset_element_web_byId(conn, checked_element_id);
         if ( basic_ret.status == 0 && basic_ret.errsubtype == DB_ERROR_NOTFOUND) {
-            http_die ("element-not-found");
+            http_die ("element-not-found", "");
         }
         if ( basic_ret.status == 0 && basic_ret.errsubtype == DB_ERROR_INTERNAL) {
             http_die ("internal-error", "Database failure");
@@ -274,7 +274,7 @@ bool database_ready;
                     http_die ("internal-error", frame);
                 }
                 else
-                    http_die ("internal-error");
+                    http_die ("internal-error", "");
             }
 
             if (streq (frame, "OK")) {
@@ -366,7 +366,7 @@ bool database_ready;
                 http_die ("internal-error", frame);
             }
             else
-                http_die ("internal-error");
+                http_die ("internal-error", "");
         }
 
     if (streq (frame, "OK")) {

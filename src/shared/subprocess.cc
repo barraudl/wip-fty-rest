@@ -247,8 +247,9 @@ const char* SubProcess::state() const {
 }
 
 std::string read_all(int fd) {
+    //Why not #define BUF_SIZE ?
     static size_t BUF_SIZE = 4096;
-    char buf[BUF_SIZE+1];
+    char buf[4097]; // BUF_SIZE +1
     ssize_t r;
 
     std::stringbuf sbuf;
@@ -292,8 +293,9 @@ int output(const Argv& args, std::string& o, std::string& e, const std::string& 
 }
 
 std::string wait_read_all(int fd) {
+    //Why not #define BUF_SIZE ?
     static size_t BUF_SIZE = 4096;
-    char buf[BUF_SIZE+1];
+    char buf[4097]; // BUF_SIZE +1
     ssize_t r;
     int exit = 0;
 

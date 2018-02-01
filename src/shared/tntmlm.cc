@@ -19,7 +19,7 @@
  */
 
 #include "shared/log.h"
-#include "tntmlm.h"
+#include "shared/tntmlm.h"
 #include "shared/str_defs.h"
 
 MlmClientPool mlm_pool {10};
